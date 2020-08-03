@@ -1,0 +1,11 @@
+coverage
+fbs
+flake8
+flake8-isort
+ipython
+mido
+piprot
+pyside2
+pytest
+pytest-cov
+python-rtmidi

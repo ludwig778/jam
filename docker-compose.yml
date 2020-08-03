@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  jam:
+    image: jam:v1
+    build:
+      context: .
+    volumes:
+      - ./:/home/jam
+    command: ["echo", "container disabled"]
+
+  sonarqube:
+    image: sonarqube:latest
+    ports:
+      - "9000:9000"
+      - "9092:9092"
+
+  scanner:
+    image: zaquestion/sonarqube-scanner
+    volumes:
+      - ./:/code/jam
+      - ./:/root/sonar_home/conf/
+      - ./:/root/src
